@@ -18,6 +18,7 @@ func _ready():
 func _physics_process(delta):
 	var colliding = get_colliding_bodies()
 	for c in colliding:
+			if c.name != "Bullet_R":
 				var explosion = Explosion.instance()
 				explosion.position = position
 				explosion.get_node("Sprite").playing = true
